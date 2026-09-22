@@ -1,10 +1,10 @@
 package org.com.lab.repository;
 
-import io.lettuce.core.dynamic.annotation.Param;
 import org.com.lab.entity.Channel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.Optional;
