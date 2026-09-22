@@ -33,7 +33,7 @@ public class LabsController {
     }
 
     // API A: Thống kê tổng quát
-    @GetMapping("/public/lab/stats")
+    @GetMapping("/public/stats")
     public StatsResponse getStats() {
         return statsService.getStats();
     }
@@ -45,7 +45,7 @@ public class LabsController {
     }
 
     // API D: Danh sách kênh
-    @GetMapping("/lab/channels")
+    @GetMapping("/channels")
     public Page<ChannelResponse> listChannels(
             @RequestParam(defaultValue = "1") @Min(value = 1, message = "INVALID_INPUT") int page,
             @RequestParam(defaultValue = "10") @Min(value = 1, message = "INVALID_INPUT") @Max(value = 100, message = "INVALID_LIMIT") int limit,
@@ -56,13 +56,13 @@ public class LabsController {
     }
 
     // API E: Tạo bản ghi thu thập
-    @PostMapping("/lab/records")
+    @PostMapping("/records")
     public RecordResponse createRecord(@Valid @RequestBody CreateRecordRequest request) {
         return recordServices.createRecord(request);
     }
 
     // API F: Danh sách bản ghi theo domain
-    @GetMapping("/lab/records")
+    @GetMapping("/records")
     public Object listRecords(
             @RequestParam(defaultValue = "1") @Min(value = 1, message = "INVALID_INPUT") Integer page,
             @RequestParam(defaultValue = "20") @Min(value = 1, message = "INVALID_INPUT") @Max(value = 100, message = "INVALID_LIMIT") Integer limit,
